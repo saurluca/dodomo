@@ -1,0 +1,38 @@
+
+/data/
+
+# jetbrains IDE
+frontend/.idea
+.idea
+
+video/
+
+# Nuxt dev/build outputs
+.output
+.data
+.nuxt
+.nitro
+.cache
+dist
+
+# Node dependencies
+node_modules
+frontend/node_modules
+frontend/.nuxt
+
+# Logs
+logs
+*.log
+
+# Misc
+.DS_Store
+.fleet
+
+# Local env files
+.env
+.env.*
+!.env.example
+
+# Build files
+
+
