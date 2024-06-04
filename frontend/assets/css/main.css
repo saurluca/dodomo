@@ -1,0 +1,12 @@
+/* tailwind.css */
+@layer tailwind-base {
+  @tailwind base;
+}
+
+@layer tailwind-utilities {
+  @tailwind components;
+  @tailwind utilities;
+}
+html, body, #__nuxt {
+  @apply h-full
+}
