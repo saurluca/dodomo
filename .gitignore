@@ -3,6 +3,7 @@
 
 # jetbrains IDE
 frontend/.idea
+backend/.idea
 .idea
 
 video/
@@ -29,6 +30,8 @@ logs
 .fleet
 
 # Local env files
+frontend/.env
+backend/.env
 .env
 .env.*
 !.env.example
