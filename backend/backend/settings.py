@@ -57,6 +57,7 @@ MIDDLEWARE = [
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://localhost:5432",
+    "http://79.214.210.18:3000",
     "https://nuxt-app-inital.vercel.app",
 ]
 
