@@ -6,7 +6,7 @@ import BoxSvg from "assets/icons/box-svg.vue";
 <template>
   <header class="bg-header text-white p-1 flex items-center justify-between lg:px-6 h-14">
     <div class="flex items-center">
-      <d-input-ref-button :to="'/dashboard'" class="text-2xl font-bold" name="Databites">
+      <d-input-ref-button :to="'/dashboard'" class="text-2xl font-bold" name="Kando">
         <box-svg/>
       </d-input-ref-button>
     </div>

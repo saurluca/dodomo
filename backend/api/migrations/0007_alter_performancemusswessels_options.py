@@ -4,14 +4,13 @@ from django.db import migrations
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('api', '0006_alter_performancemusswessels_table'),
+        ("api", "0006_alter_performancemusswessels_table"),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name='performancemusswessels',
-            options={'managed': False},
+            name="performancemusswessels",
+            options={"managed": False},
         ),
     ]

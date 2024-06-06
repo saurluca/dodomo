@@ -12,6 +12,7 @@ export default defineNuxtConfig({
     modules: [
         'nuxt-primevue'
     ],
+    components: true,
     primevue: {
         cssLayerOrder: 'tailwind-base, primevue, tailwind-utilities',
         components: {

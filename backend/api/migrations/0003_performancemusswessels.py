@@ -4,21 +4,28 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('api', '0002_alter_item_amount_alter_item_category_and_more'),
+        ("api", "0002_alter_item_amount_alter_item_category_and_more"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='PerformanceMusswessels',
+            name="PerformanceMusswessels",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('datum', models.CharField(max_length=255)),
-                ('filiale', models.BigIntegerField(max_length=255)),
-                ('umsatz', models.FloatField()),
-                ('kundenanzahl', models.BigIntegerField(max_length=255)),
-                ('prodstunden', models.FloatField()),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("datum", models.CharField(max_length=255)),
+                ("filiale", models.BigIntegerField(max_length=255)),
+                ("umsatz", models.FloatField()),
+                ("kundenanzahl", models.BigIntegerField(max_length=255)),
+                ("prodstunden", models.FloatField()),
             ],
         ),
     ]

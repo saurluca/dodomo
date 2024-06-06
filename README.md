@@ -9,6 +9,9 @@ Kando is a simple and intuitive to-do application designed to help you manage yo
 - **Frontend:** Nuxt.js
 - **Database:** PostgreSQL
 - **Hosting:** Custom server
+- 
+- **Other Tools:** Ruff
+- **Development Tools:** Git, GitHub, Pycharm, 
 
 ## Installation
 

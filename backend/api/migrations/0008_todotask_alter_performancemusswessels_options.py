@@ -4,27 +4,26 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('api', '0007_alter_performancemusswessels_options'),
+        ("api", "0007_alter_performancemusswessels_options"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='TodoTask',
+            name="TodoTask",
             fields=[
-                ('id', models.BigAutoField(primary_key=True, serialize=False)),
-                ('titel', models.CharField(max_length=255)),
-                ('description', models.CharField(max_length=255)),
-                ('assignee', models.CharField(max_length=255)),
+                ("id", models.BigAutoField(primary_key=True, serialize=False)),
+                ("titel", models.CharField(max_length=255)),
+                ("description", models.CharField(max_length=255)),
+                ("assignee", models.CharField(max_length=255)),
             ],
             options={
-                'db_table': 'todo_task',
-                'managed': True,
+                "db_table": "todo_task",
+                "managed": True,
             },
         ),
         migrations.AlterModelOptions(
-            name='performancemusswessels',
-            options={'managed': True},
+            name="performancemusswessels",
+            options={"managed": True},
         ),
     ]

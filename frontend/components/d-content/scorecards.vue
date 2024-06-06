@@ -12,7 +12,7 @@ provide('items', items);
   <div class="flex p-8 w-full">
     <div class="w-full1">
       <header class="text-4xl font-bold text-center p-6 ">
-        Performance Musswessels
+        Performance
       </header>
       <d-tables-sample-table :items="items" class=""/>
     </div>

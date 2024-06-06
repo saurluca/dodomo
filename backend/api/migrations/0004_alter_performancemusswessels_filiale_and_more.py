@@ -4,20 +4,19 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('api', '0003_performancemusswessels'),
+        ("api", "0003_performancemusswessels"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='performancemusswessels',
-            name='filiale',
+            model_name="performancemusswessels",
+            name="filiale",
             field=models.BigIntegerField(),
         ),
         migrations.AlterField(
-            model_name='performancemusswessels',
-            name='kundenanzahl',
+            model_name="performancemusswessels",
+            name="kundenanzahl",
             field=models.BigIntegerField(),
         ),
     ]

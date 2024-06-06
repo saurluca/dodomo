@@ -16,8 +16,7 @@ const props = defineProps({
 
 <template>
   <router-link :class="['flex', 'items-center', 'space-x-2', 'hover:bg-gray-800', 'rounded-md', 'p-2']" :to="to">
-    <slot>
-    </slot>
+    <slot></slot>
     <span>{{ name }}</span>
   </router-link>
 </template>

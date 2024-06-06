@@ -4,14 +4,13 @@ from django.db import migrations
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('api', '0004_alter_performancemusswessels_filiale_and_more'),
+        ("api", "0004_alter_performancemusswessels_filiale_and_more"),
     ]
 
     operations = [
         migrations.AlterModelTable(
-            name='performancemusswessels',
-            table='performance_musswessels',
+            name="performancemusswessels",
+            table="performance_musswessels",
         ),
     ]
