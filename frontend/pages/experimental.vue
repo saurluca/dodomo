@@ -1,12 +1,15 @@
 <script lang="ts" setup>
 const {data, error} = await useFetch("http://localhost:8000/test/")
 const fetchedData = ref(data);
-import DContentExperimental from '@/components/d-content/experimental.vue';
 
 </script>
 
 <template>
-<DContentExperimental/>
+  <d-content-experimental/>
+  <d-content-todolist/>
+  <div>
+    hello there
+  </div>
 </template>
 
 <style scoped>
