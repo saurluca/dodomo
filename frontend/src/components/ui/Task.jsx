@@ -1,6 +1,17 @@
 import {Button} from "@/components/ui/button.jsx";
+import axios from "axios";
 
-const Task = ({ task }) => {
+
+const Task = ({task}) => {
+    const handleDelete = async () => {
+        try {
+            const response = await axios.delete(`http://localhost:8000/api/TodoTask/${task.id}/delete/`);
+            console.log("Task deleted:", response.data);
+        } catch (error) {
+            console.error("Error deleting task:", error);
+        }
+    };
+
     return (
         <div className="rounded-lg border bg-card text-card-foreground shadow-sm" data-v0-t="card">
             <div className="p-3 flex items-center justify-between">
@@ -14,7 +25,10 @@ const Task = ({ task }) => {
                     <div className="text-sm text-gray-500">
                         {task.due_date}
                     </div>
-                    <Button variant="outline">Delete</Button>
+                    <div className="text-sm text-gray-500">
+                        {task.id}
+                    </div>
+                    <Button variant="outline" onClick={handleDelete}>Delete</Button>
                 </div>
             </div>
         </div>

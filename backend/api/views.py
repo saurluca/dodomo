@@ -61,32 +61,14 @@ def view(request, model_name):
         return Response(status=status.HTTP_404_NOT_FOUND)
 
 
-# @api_view(["POST"])
-# def add(request, model_name):
-#
-#     SerializerClass = getattr(
-#         import_module("api.serializers"), f"{model_name}Serializer"
-#     )
-#     print(request.data)
-#     item = SerializerClass(data=request.data)
-#     print(request.data)
-#
-#     # filter for already existing data
-#     # ModelClass = apps.get_model("api", model_name)
-#     # if ModelClass.objects.filter(**request.data).exists():
-#     #     raise serializers.ValidationError('This data already exists')
-#
-#     if item.is_valid():
-#         item.save()
-#         return Response(item.data)
-#     else:
-#         return Response(status=status.HTTP_404_NOT_FOUND)
-
 @api_view(["POST"])
 def add(request, model_name):
     try:
         SerializerClass = getattr(import_module("api.serializers"), f"{model_name}Serializer")
+
+        print(request.data)
         item = SerializerClass(data=request.data)
+        print(request.data)
 
         if item.is_valid():
             item.save()
