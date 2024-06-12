@@ -1,5 +1,6 @@
 
 /data/
+_/
 
 *__pycache__/
 backend/__pycache__/
