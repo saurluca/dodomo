@@ -10,7 +10,7 @@ export default defineNuxtConfig({
         },
     },
     modules: [
-        'nuxt-primevue'
+        'nuxt-primevue',
     ],
     components: true,
     primevue: {

@@ -1,7 +1,11 @@
 <script lang="ts" setup>
 import {ref} from "vue";
 
-const {data: tasks, refresh} = await useFetch("http://127.0.0.1:8000/api/TodoTask/all/?limit=10");
+// const baseURL= "http://127.0.0.1:8000"
+const baseURL = process.env.API_BASE_URL
+
+// const {data: tasks, refresh} = await useFetch("http://127.0.0.1:8000/api/TodoTask/all/?limit=10");
+const {data: tasks, refresh} = await useFetch(`${baseURL}/api/TodoTask/all/?limit=10`);
 const newTask = ref("");
 const new_due_date = ref("");
 const checked = ref([]);
