@@ -11,7 +11,7 @@ const Task = ({task, onDelete}) => {
                 <div className="flex items-center space-x-4">
                     <p-checkbox v-model="task.completed" binary="true"/>
                     <label className="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-lg font-medium">
-                        {task.titel}
+                        {task.title}
                     </label>
                 </div>
                 <div className="flex items-center ml-16 space-x-4">

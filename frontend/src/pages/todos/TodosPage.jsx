@@ -38,7 +38,6 @@ const TodosPage = () => {
         }
     };
 
-
     return (
         <div>
             <div className="flex justify-center mb-4">
