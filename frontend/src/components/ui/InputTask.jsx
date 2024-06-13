@@ -1,36 +1,17 @@
 import {useState} from 'react';
-import axios from 'axios';
 import {Input} from "@/components/ui/input.jsx"
 import {Button} from "@/components/ui/button.jsx"
 
 
-export function InputTask() {
+export function InputTask({addTask}) {
     const [newTask, setNewTask] = useState('');
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        if (newTask.trim()) {
-            const data = JSON.stringify({title: newTask});
-            console.log('Data being sent:', data);
-
-            try {
-                await axios.post(
-                    "http://127.0.0.1:8000/api/TodoTask/add/",
-                    data,
-                    {
-                        headers: {
-                            'Content-Type': 'application/json'
-                        }
-                    }
-                );
-
-                // onAddTask(response.data);
-                setNewTask('');
-            } catch (error) {
-                console.error('Error adding task:', error);
-            }
-        }
+    const handleSubmit = (e) => {
+        e.preventDefault(); // Prevent the default form submission behavior
+        addTask(newTask);
+        setNewTask('');
     };
+
 
     return (
         <form onSubmit={handleSubmit} className="flex w-full max-w-sm items-center space-x-2">
