@@ -4,7 +4,7 @@ import {InputTask} from "@/components/ui/InputTask.jsx"
 import axios from "axios";
 
 const TodosPage = () => {
-    const {tasks, loading, error} = useLoadTasks();
+    const {tasks, loading, error, reloadTasks} = useLoadTasks();
 
     if (loading) return <p>Loading tasks...</p>;
     if (error) return <p>Error loading tasks: {error.message}</p>;
@@ -13,6 +13,7 @@ const TodosPage = () => {
         try {
             const response = await axios.delete(`http://localhost:8000/api/TodoTask/${taskId}/delete/`);
             console.log("Task deleted:", response.data);
+            await reloadTasks();
         } catch (error) {
             console.error("Error deleting task:", error);
         }
@@ -32,6 +33,7 @@ const TodosPage = () => {
                         }
                     }
                 );
+                await reloadTasks();
             } catch (error) {
                 console.error('Error adding task:', error);
             }
