@@ -12,7 +12,6 @@ export function InputTask({addTask}) {
         setNewTask('');
     };
 
-
     return (
         <form onSubmit={handleSubmit} className="flex w-full max-w-sm items-center space-x-2">
             <Input

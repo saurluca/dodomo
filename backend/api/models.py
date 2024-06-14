@@ -15,3 +15,5 @@ class TodoTask(models.Model):
     class Meta:
         managed = True
         db_table = "todo_task"
+
+

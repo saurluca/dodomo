@@ -4,10 +4,9 @@ import {InputTask} from "@/components/ui/InputTask.jsx"
 import axios from "axios";
 
 const TodosPage = () => {
-    const {tasks, loading, error, reloadTasks} = useLoadTasks();
+    const {tasks, error, reloadTasks} = useLoadTasks();
 
-    if (loading) return <p>Loading tasks...</p>;
-    if (error) return <p>Error loading tasks: {error.message}</p>;
+    // if (error) return <p>Error loading tasks: {error.message}</p>;
 
     const deleteTask = async (taskId) => {
         try {
@@ -45,7 +44,7 @@ const TodosPage = () => {
             <div className="flex justify-center mb-4">
                 <InputTask addTask={addTask}/>
             </div>
-            <div className="flex col-1 justify-center">
+            <div className="flex justify-center">
                 <div className="space-y-2">
                     {tasks.map(task => (
                         <Task key={task.id} task={task} onDelete={deleteTask}/>

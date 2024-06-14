@@ -8,14 +8,12 @@ import Layout from '@/components/Layout.jsx'
 
 const router = createBrowserRouter(
     createRoutesFromElements(
-        // <>
             <Route path="/" element={<Layout />}>
                 <Route index element={<HomePage />} />
                 <Route path="/todos" element={<TodosPage/>}/>
                 <Route path="/testing" element={<TestingPage/>}/>
                 <Route path="/login" element={<LoginPage/>}/>
             </Route>
-        // </>
     )
 );
 
