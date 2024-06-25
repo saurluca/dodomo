@@ -12,9 +12,6 @@ export const Header = () => {
                     <span className="text-lg font-semibold">Kando</span>
                 </Link>
                 <nav className="hidden md:flex items-center gap-6">
-                    <Link to="/todos" className="font-medium hover:text-gray-300">
-                        Todos
-                    </Link>
                     <Link to="/login" className="font-medium hover:text-gray-300">
                         Login
                     </Link>

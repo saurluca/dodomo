@@ -13,7 +13,7 @@ const Task = ({task, onDelete, onUpdate}) => {
     }
 
     return (
-        <div className="rounded-lg border bg-card text-card-foreground shadow-md">
+        <div className="rounded-lg border bg-card text-card-foreground shadow-md ">
             <div className="p-3 flex items-center justify-between">
                 <label className="flex items-center space-x-4">
                     <Checkbox checked={task.completed} onCheckedChange={handleCheckboxChange}/>

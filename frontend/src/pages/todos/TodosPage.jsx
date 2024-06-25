@@ -2,6 +2,9 @@ import Task from "@/components/ui/Task.jsx"
 import useLoadTasks from '@/hooks/useLoadingTasks.jsx';
 import {InputTask} from "@/components/ui/InputTask.jsx"
 import axios from "axios";
+import {ScrollArea} from "@/components/ui/scroll-area.jsx";
+import {Separator} from "@radix-ui/react-dropdown-menu";
+
 
 const TodosPage = () => {
     const {tasks, error, reloadTasks} = useLoadTasks();
@@ -9,14 +12,14 @@ const TodosPage = () => {
     if (error) return <p>Error loading tasks: {error.message}</p>;
 
     const updateTaskCompletion = async (taskId, updatedTask) => {
-       try {
-           const response = await axios.post(`http://localhost:8000/api/TodoTask/${taskId}/update/`,
-               updatedTask);
+        try {
+            const response = await axios.post(`http://localhost:8000/api/TodoTask/${taskId}/update/`,
+                updatedTask);
             console.log("Task updated:", response.data);
             await reloadTasks();
-       } catch (error) {
-           console.error("Error updating task:", error);
-       }
+        } catch (error) {
+            console.error("Error updating task:", error);
+        }
     }
 
     const deleteTask = async (taskId) => {
@@ -52,20 +55,22 @@ const TodosPage = () => {
 
 
     return (
-        <div>
-            <div className="flex justify-center mb-4">
+        <div className="w-full">
+            <div className="flex mb-4">
                 <InputTask addTask={addTask}/>
             </div>
-            <div className="flex justify-center">
-                <div className="space-y-2">
+            <ScrollArea className="h-80 w-1/3 rounded-md border bg-gray-100 flex justify-center ">
+                <div className="p-4">
                     {tasks.map(task => (
-                        <Task key={task.id} task={task} onDelete={deleteTask} onUpdate={updateTaskCompletion}/>
+                        <>
+                            <Task key={task.id} task={task} onDelete={deleteTask} onUpdate={updateTaskCompletion}/>
+                            <Separator className="my-2" />
+                        </>
                     ))}
                 </div>
-            </div>
+            </ScrollArea>
         </div>
     );
 };
 
 export default TodosPage;
-
