@@ -6,7 +6,18 @@ import axios from "axios";
 const TodosPage = () => {
     const {tasks, error, reloadTasks} = useLoadTasks();
 
-    // if (error) return <p>Error loading tasks: {error.message}</p>;
+    if (error) return <p>Error loading tasks: {error.message}</p>;
+
+    const updateTaskCompletion = async (taskId, updatedTask) => {
+       try {
+           const response = await axios.post(`http://localhost:8000/api/TodoTask/${taskId}/update/`,
+               updatedTask);
+            console.log("Task updated:", response.data);
+            await reloadTasks();
+       } catch (error) {
+           console.error("Error updating task:", error);
+       }
+    }
 
     const deleteTask = async (taskId) => {
         try {
@@ -39,6 +50,7 @@ const TodosPage = () => {
         }
     };
 
+
     return (
         <div>
             <div className="flex justify-center mb-4">
@@ -47,7 +59,7 @@ const TodosPage = () => {
             <div className="flex justify-center">
                 <div className="space-y-2">
                     {tasks.map(task => (
-                        <Task key={task.id} task={task} onDelete={deleteTask}/>
+                        <Task key={task.id} task={task} onDelete={deleteTask} onUpdate={updateTaskCompletion}/>
                     ))}
                 </div>
             </div>

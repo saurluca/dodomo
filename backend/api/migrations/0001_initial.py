@@ -5,25 +5,26 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='TodoTask',
+            name="TodoTask",
             fields=[
-                ('id', models.BigAutoField(primary_key=True, serialize=False)),
-                ('title', models.CharField(max_length=255)),
-                ('description', models.CharField(default='description', max_length=255)),
-                ('due_date', models.DateField(default=datetime.date(2024, 6, 25))),
-                ('completed', models.BooleanField(default=False)),
+                ("id", models.BigAutoField(primary_key=True, serialize=False)),
+                ("title", models.CharField(max_length=255)),
+                (
+                    "description",
+                    models.CharField(default="description", max_length=255),
+                ),
+                ("due_date", models.DateField(default=datetime.date(2024, 6, 25))),
+                ("completed", models.BooleanField(default=False)),
             ],
             options={
-                'db_table': 'todo_task',
-                'managed': True,
+                "db_table": "todo_task",
+                "managed": True,
             },
         ),
     ]
