@@ -64,7 +64,9 @@ def view(request, model_name):
 @api_view(["POST"])
 def add(request, model_name):
     try:
-        SerializerClass = getattr(import_module("api.serializers"), f"{model_name}Serializer")
+        SerializerClass = getattr(
+            import_module("api.serializers"), f"{model_name}Serializer"
+        )
 
         print(request.data)
         item = SerializerClass(data=request.data)
