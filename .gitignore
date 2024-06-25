@@ -2,7 +2,7 @@
 /data/
 _/
 
-*.sqlite3
+/backend/db.sqlite3
 
 *__pycache__/
 backend/__pycache__/
