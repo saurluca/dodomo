@@ -13,10 +13,10 @@ const Task = ({task, onDelete, onUpdate}) => {
     }
 
     return (
-        <div className="rounded-lg border bg-card text-card-foreground shadow-md ">
+        <div className="rounded-lg border bg-card text-card-foreground shadow-md max-w-[700px] w-full">
             <div className="p-3 flex items-center justify-between">
                 <label className="flex items-center space-x-4">
-                    <Checkbox checked={task.completed} onCheckedChange={handleCheckboxChange}/>
+                    <Checkbox checked={task.completed} onCheckedChange={handleCheckboxChange} className="h-5 w-5"/>
                     <label className={`text-lg font-medium task ${task.completed ? 'line-through' : ''}`}>
                         {task.title}
                     </label>

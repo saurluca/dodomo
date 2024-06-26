@@ -55,19 +55,17 @@ const TodosPage = () => {
 
 
     return (
-        <div className="w-full">
-            <div className="flex mb-4">
+        <div className="w-full mx-auto">
+            <div className="flex mb-5 justify-center">
                 <InputTask addTask={addTask}/>
             </div>
-            <ScrollArea className="h-80 w-1/3 rounded-md border bg-gray-100 flex justify-center ">
-                <div className="p-4">
+            <ScrollArea className="max-w-[700px] w-full h-[570px] mx-auto rounded-md border bg-gray-100 flex justify-center p-4 shadow">
                     {tasks.map(task => (
                         <>
-                            <Task key={task.id} task={task} onDelete={deleteTask} onUpdate={updateTaskCompletion}/>
-                            <Separator className="my-2" />
+                            <Task key={task.id} task={task} onDelete={deleteTask} onUpdate={updateTaskCompletion} />
+                            <Separator className="my-3" />
                         </>
                     ))}
-                </div>
             </ScrollArea>
         </div>
     );

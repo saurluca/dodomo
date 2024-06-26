@@ -13,16 +13,16 @@ export function InputTask({addTask}) {
     };
 
     return (
-        <form onSubmit={handleSubmit} className="flex w-full max-w-sm items-center space-x-2">
+        <form onSubmit={handleSubmit} className="flex max-w-[420px] w-full items-center space-x-2">
             <Input
                 type="text"
                 placeholder="New Task"
                 value={newTask}
                 onChange={(e) => setNewTask(e.target.value)}
-                className="bg-white"
+                className="bg-white shadow"
                 required
             />
-            <Button type="submit">Add</Button>
+            <Button className="shadow border" type="submit">Add</Button>
         </form>
     );
 }

@@ -21,11 +21,7 @@ export const Header = () => {
                 </nav>
             </div>
             <div className="flex items-center gap-4">
-                <Button variant="ghost" size="icon" className="rounded-full">
-                    <img src="/placeholder.svg" width="32" height="32" className="rounded-full border" alt="Avatar"/>
-                    <span className="sr-only">Toggle user menu</span>
-                </Button>
-                <Button>Nothingness</Button>
+                <Link to="/forbidden" className="text-muted text-2xl text-red-600">Nothingness</Link>
             </div>
 
         </header>
