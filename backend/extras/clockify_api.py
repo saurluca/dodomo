@@ -36,9 +36,9 @@ def add_task(description, project_name):
 
     # Define other details
     billable = False
-    project_id = get_project_id_by_name(project_name)
+    # project_id = get_project_id_by_name(project_name)
     project_id = "667af6a5222a7c76c30e3b19"
-    task_id = "taskId456"
+    # task_id = "taskId456"
 
     # Create a time entry DTO
     time_entry = CreateTimeEntryDTO(
@@ -54,7 +54,7 @@ def add_task(description, project_name):
     logging.info("Successfully added time entry")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     logging.info(current_user.name)
     logging.info(workspace_id)
     add_task("Playing around", "kando")

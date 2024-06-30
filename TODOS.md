@@ -1,7 +1,8 @@
 # TODOS
 
 - [ ] Increase size of task window
-- [ ] Move task window to the middle
+- [X] Move task window to the middle
+- [ ] move tasks up and down
 
 
 

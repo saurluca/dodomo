@@ -6,7 +6,8 @@ class TodoTask(models.Model):
     id = models.BigAutoField(primary_key=True)
     title = models.CharField(max_length=255)
     description = models.CharField(max_length=255, default="description")
-    due_date = models.DateField(default=timezone.now().date())
+    due_date = models.DateField(default=timezone.now)
+    # due_date = models.DateField(default=timezone.now().date())
     completed = models.BooleanField(default=False)
 
     def __str__(self):
