@@ -3,7 +3,7 @@ import useLoadTasks from '@/hooks/useLoadingTasks.jsx';
 import {InputTask} from "@/components/ui/InputTask.jsx"
 import {ScrollArea} from "@/components/ui/scroll-area.jsx";
 import {Separator} from "@radix-ui/react-dropdown-menu";
-import {addTask, deleteTask, updateTaskCompletion} from "@/services/taskApi.js";
+import {addTask, deleteTask, updateTaskCompletion} from "@/services/taskApi.jsx";
 
 
 const TodosPage = () => {
