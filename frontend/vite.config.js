@@ -9,13 +9,4 @@ export default defineConfig({
       '@': '/src',
     },
   },
-  // server: {
-  //   proxy: {
-  //     '/api': {
-  //       target: 'http://127.0.0.1:8000',  // Your Django backend
-  //       changeOrigin: true,
-  //       secure: false,
-  //     },
-  //   },
-  // },
 });

@@ -11,10 +11,10 @@ const useLoadTasks = () => {
         setLoading(true);
         setError(null);
 
-        axios.get("http://localhost:8000/api/TodoTask/all/",
+        axios.get("http://127.0.0.1:8000/api/TodoTask/all/",
             {
                 params: {
-                    limit: 50
+                    limit: 20
                 }
             },)
             .then(response => {
