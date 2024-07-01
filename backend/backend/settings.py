@@ -10,22 +10,26 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
+import os
 from pathlib import Path
 from dotenv import load_dotenv
-import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+# loads the environment variables, which are stored in the .env file
+load_dotenv()
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-eva0nha(!je2e%ilrji!22sdp#q5p2d2--cs=%*zxxzvdzb=@h"
+SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+# ALLOWED_HOSTS = ["lucasaur.com", "localhost", "127.0.0.1"]
 ALLOWED_HOSTS = []
 
 # Application definition
@@ -46,20 +50,20 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
+    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    "corsheaders.middleware.CorsMiddleware",
 ]
 
 CORS_ALLOWED_ORIGINS = [
+    "https://lucasaur.com",
+    "http://lucasaur.com",
     "http://localhost:3000",
     "http://localhost:5432",
     "http://localhost:5173",
-    "http://79.214.210.18:3000",
-    "https://nuxt-app-inital.vercel.app",
 ]
 
 ROOT_URLCONF = "backend.urls"
@@ -85,8 +89,6 @@ WSGI_APPLICATION = "backend.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-# loads the environment variables, which are stored in the .env file
-load_dotenv()
 
 DATABASES = {
     "default": {
@@ -133,3 +135,13 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# SECURE_HSTS_SECONDS = 31536000
+# SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+# SECURE_HSTS_PRELOAD = True
+#
+# SECURE_SSL_REDIRECT = True
+#
+# SESSION_COOKIE_SECURE = True
+#
+# CSRF_COOKIE_SECURE = True
