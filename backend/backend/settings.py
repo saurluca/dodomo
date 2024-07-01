@@ -27,10 +27,9 @@ load_dotenv()
 SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-# ALLOWED_HOSTS = ["lucasaur.com", "localhost", "127.0.0.1"]
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["lucasaur.com", "localhost", "127.0.0.1"]
 
 # Application definition
 
@@ -62,8 +61,11 @@ CORS_ALLOWED_ORIGINS = [
     "https://lucasaur.com",
     "http://lucasaur.com",
     "http://localhost:3000",
+    "http://127.0.0.1:3000",
     "http://localhost:5432",
+    "http://127.0.0.1:5432",
     "http://localhost:5173",
+    "http://127.0.0.1:5173",
 ]
 
 ROOT_URLCONF = "backend.urls"
@@ -138,10 +140,10 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # SECURE_HSTS_SECONDS = 31536000
 # SECURE_HSTS_INCLUDE_SUBDOMAINS = True
-# SECURE_HSTS_PRELOAD = True
+# SECURE_HSTS_PRELOAD = False
 #
-# SECURE_SSL_REDIRECT = True
+SECURE_SSL_REDIRECT = False
+
+SESSION_COOKIE_SECURE = True
 #
-# SESSION_COOKIE_SECURE = True
-#
-# CSRF_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True

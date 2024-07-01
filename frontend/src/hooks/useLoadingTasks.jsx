@@ -14,7 +14,8 @@ const useLoadTasks = () => {
         axios.get("http://127.0.0.1:8000/api/TodoTask/all/",
             {
                 params: {
-                    limit: 20
+                    // TODO what if this sometime not worky if not 10?
+                    limit: 50
                 }
             },)
             .then(response => {
