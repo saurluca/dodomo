@@ -45,7 +45,7 @@ def view(request, model_name):
     )
 
     limit = int(
-        request.query_params.get("limit", 5)
+        request.query_params.get("limit", 10)
     )  # Default limit to 5 if not provided
 
     # Fetch items with a limit
@@ -68,9 +68,8 @@ def add(request, model_name):
             import_module("api.serializers"), f"{model_name}Serializer"
         )
 
-        print(request.data)
         item = SerializerClass(data=request.data)
-        print(request.data)
+        # print(request.data)
 
         if item.is_valid():
             item.save()
@@ -78,6 +77,7 @@ def add(request, model_name):
         else:
             return Response(item.errors, status=status.HTTP_400_BAD_REQUEST)
     except Exception as e:
+        # print("Error: ", e)
         return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
