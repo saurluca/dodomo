@@ -1,7 +1,7 @@
 import {createBrowserRouter, RouterProvider, Route, createRoutesFromElements} from 'react-router-dom';
-import TodosPage from './pages/todos/TodosPage';
-import TestingPage from './pages/testing/TestingPage.jsx';
-import LoginPage from './pages/login/LoginPage.jsx';
+import TodosPage from './pages/TodosPage.jsx';
+import TestingPage from './pages/TestingPage.jsx';
+import LoginPage from './pages/LoginPage.jsx';
 import Layout from '@/components/Layout.jsx'
 import ForbiddenPage from "@/pages/ForbiddenPage.jsx";
 
