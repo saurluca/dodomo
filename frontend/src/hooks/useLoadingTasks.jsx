@@ -11,7 +11,7 @@ const useLoadTasks = () => {
         setLoading(true);
         setError(null);
 
-        axios.get("http://127.0.0.1:8000/api/TodoTask/all/",
+        axios.get("http://127.0.0.1:8001/api/TodoTask/all/",
             {
                 params: {
                     // TODO what if this sometime not worky if not 10?
