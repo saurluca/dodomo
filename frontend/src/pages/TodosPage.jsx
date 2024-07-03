@@ -13,6 +13,11 @@ const TodosPage = () => {
     const audioRef = useRef(null);
     const [soundOn, setSoundOn] = useState(false);
 
+    const checkedTasks = tasks.filter(task => task.completed).sort((a, b) => a.id - b.id);
+    const uncheckedTasks = tasks.filter(task => !task.completed);
+
+    const tasksToShow = [...checkedTasks.slice(0, 4), ...uncheckedTasks.slice(0, 3)];
+
     if (error) return <p>Error loading tasks: {error.message}</p>;
 
     const handleUpdateTaskCompletion = async (taskId, updatedTask) => {
@@ -74,12 +79,17 @@ const TodosPage = () => {
             </div>
             <audio ref={audioRef}/>
             <ScrollArea className="max-w-[700px] w-full h-[570px] mx-auto rounded-md border bg-gray-100 flex justify-center p-4 shadow">
-                {tasks.map(task => (
-                    <div key={task.id}>
-                        <Task task={task} onDelete={handleDeleteTask} onUpdate={handleUpdateTaskCompletion}/>
-                        <Separator className="my-3"/>
-                    </div>
-                ))}
+                {/*{tasks.map(task => (*/}
+                {tasksToShow.length > 0 ? (
+                    tasksToShow.map(task =>
+                        <div key={task.id}>
+                            <Task task={task} onDelete={handleDeleteTask} onUpdate={handleUpdateTaskCompletion}/>
+                            <Separator className="my-3"/>
+                        </div>
+                    )) : (
+                    <div>No tasks to show</div>
+                )}
+                {/*))}*/}
             </ScrollArea>
         </div>
     );
