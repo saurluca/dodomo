@@ -22,7 +22,7 @@ export function InputTask({addTask}) {
                 className="bg-white shadow"
                 required
             />
-            <Button className="shadow border" type="submit">Add</Button>
+            <Button className="shadow border hover:bg-green-700" type="submit">Add</Button>
         </form>
     );
 }
