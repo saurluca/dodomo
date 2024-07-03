@@ -12,6 +12,7 @@ const TodosPage = () => {
     const {tasks, error, reloadTasks} = useLoadTasks();
     const audioRef = useRef(null);
     const [soundOn, setSoundOn] = useState(false);
+    const [workingMode, setWorkingMode] = useState(false);
 
     const checkedTasks = tasks.filter(task => task.completed).sort((a, b) => a.id - b.id);
     const uncheckedTasks = tasks.filter(task => !task.completed);
@@ -71,6 +72,11 @@ const TodosPage = () => {
                 <div className="flex-1 flex justify-center">
                     <InputTask addTask={handleAddTask}/>
                 </div>
+                <div className={"px-20"}>
+                    <Button onClick={() => setWorkingMode(!workingMode)} className={"bg-blue-500 text-white hover:bg-blue-700 mx-3"}>
+                        WorkingMode {workingMode ? 'On' : 'Off'}
+                    </Button>
+                </div>
                 <div className="absolute right-0">
                     <Button onClick={() => setSoundOn(!soundOn)} className="bg-blue-500 text-white hover:bg-blue-700 mx-3">
                         Sound {soundOn ? 'On' : 'Off'}
@@ -80,7 +86,8 @@ const TodosPage = () => {
             <audio ref={audioRef}/>
             <ScrollArea className="max-w-[700px] w-full h-[570px] mx-auto rounded-md border bg-gray-100 flex justify-center p-4 shadow">
                 {/*{tasks.map(task => (*/}
-                {tasksToShow.length > 0 ? (
+                {workingMode ? (
+                    tasksToShow.length > 0 ? (
                     tasksToShow.map(task =>
                         <div key={task.id}>
                             <Task task={task} onDelete={handleDeleteTask} onUpdate={handleUpdateTaskCompletion}/>
@@ -88,8 +95,13 @@ const TodosPage = () => {
                         </div>
                     )) : (
                     <div>No tasks to show</div>
-                )}
-                {/*))}*/}
+                    )) : (
+                    tasks.map(task => (
+                        <div key={task.id}>
+                            <Task task={task} onDelete={handleDeleteTask} onUpdate={handleUpdateTaskCompletion}/>
+                            <Separator className="my-3"/>
+                        </div>
+                    )))}
             </ScrollArea>
         </div>
     );
