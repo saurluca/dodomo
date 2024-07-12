@@ -102,3 +102,25 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 
 Thank you for using Kando! We hope it helps you stay organized and productive.
+
+Build the React app:
+
+sh
+Copy code
+npm run build
+Connect to the Hetzner server:
+
+sh
+Copy code
+ssh username@your_hetzner_ip
+Upload the build files:
+
+sh
+Copy code
+scp -r build/* username@your_hetzner_ip:/www/domainname
+Restart the web server (if necessary):
+
+sh
+Copy code
+sudo systemctl restart nginx # or your specific web server
+

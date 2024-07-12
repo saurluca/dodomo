@@ -26,6 +26,9 @@ class TodoList:
         for task in sample_tasks:
             self.add_task(task)
 
+    def trigger_exception(self):
+        raise Exception("This is a triggered exception.")
+
 
 if __name__ == "__main__":
     tl = TodoList()
@@ -33,3 +36,10 @@ if __name__ == "__main__":
     tl.view_tasks()
     tl.add_task("Hello World")
     tl.view_tasks()
+    tl.trigger_exception()
+
+"""
+Write an insightful but concise Git commit message in a complete sentence in present tense for the following diff without prefacing it with anything, 
+the response must be in the language english and must NOT be longer than 74 characters.
+
+"""
