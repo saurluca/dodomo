@@ -1,5 +1,6 @@
 import {Link} from "react-router-dom";
 import {PackageIcon} from "@/assets/icons/PackageIcon.jsx";
+import LogoutButton from "@/components/functional/LogoutButton.jsx";
 
 
 export const Header = () => {
@@ -11,15 +12,21 @@ export const Header = () => {
                     <span className="text-lg font-semibold">Kando</span>
                 </Link>
                 <nav className="hidden md:flex items-center gap-6">
-                    <Link to="/login" className="font-medium hover:text-gray-300">
-                        Login
+                    <Link to="/soundboard" className="font-medium hover:text-gray-300">
+                        Soundboard
                     </Link>
-                    <Link to="/testing" className="font-medium hover:text-gray-300">
+                    <Link to="/notes" className="font-medium hover:text-gray-300">
+                        Notes
+                    </Link><Link to="/testing" className="font-medium hover:text-gray-300">
                         Testing
+                    </Link>
+                    <Link to="/landing" className="font-medium hover:text-gray-300">
+                        Landing
                     </Link>
                 </nav>
             </div>
             <div className="flex items-center gap-4">
+                <LogoutButton/>
                 <Link to="/forbidden" className="text-muted text-2xl text-red-600">Nothingness</Link>
             </div>
 
