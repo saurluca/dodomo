@@ -6,12 +6,12 @@ Kando is a simple and intuitive to-do application designed to help you manage yo
 ## Technologies Used
 
 - **Backend:** Django
-- **Frontend:** Nuxt.js
-- **Database:** PostgreSQL
+- **Frontend:** React
+- **Database:** SQLite3
 - **Hosting:** Custom server
 - 
 - **Other Tools:** Ruff
-- **Development Tools:** Git, GitHub, Pycharm, 
+- **Development Tools:** Git, GitHub, Pycharm
 
 ## Installation
 
@@ -19,7 +19,7 @@ Kando is a simple and intuitive to-do application designed to help you manage yo
 
 - Python 3.12
 - Node.js and npm
-- PostgreSQL
+
 
 ### Backend Setup
 
