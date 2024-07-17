@@ -7,7 +7,7 @@ export const Header = () => {
     return (
         <header className="bg-gray-900 text-white py-4 px-6 flex items-center justify-between">
             <div className="flex items-center gap-4">
-                <Link to="/" className="flex items-center gap-2">
+                <Link to="/todos" className="flex items-center gap-2">
                     <PackageIcon className="w-6 h-6"/>
                     <span className="text-lg font-semibold">Kando</span>
                 </Link>
@@ -20,7 +20,7 @@ export const Header = () => {
                     </Link><Link to="/testing" className="font-medium hover:text-gray-300">
                         Testing
                     </Link>
-                    <Link to="/landing" className="font-medium hover:text-gray-300">
+                    <Link to="/" className="font-medium hover:text-gray-300">
                         Landing
                     </Link>
                     <Link to="/tools" className="font-medium hover:text-gray-300">

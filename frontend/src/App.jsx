@@ -8,15 +8,19 @@ import ProtectedRoute from "@/components/ProtectedRoute.jsx";
 import LandingPage from "@/pages/LandingPage.jsx";
 import SoundboardPage from "@/pages/SoundboardPage.jsx";
 import ToolsPage from "@/pages/ToolsPage.jsx";
+import Callback from "@/components/Callback.jsx";
+import PublicPage from "@/pages/PublicPage.jsx";
 
 
 const router = createBrowserRouter(
     createRoutesFromElements(
         <>
-            <Route path="/landing" element={<LandingPage/>}/>
+            <Route path="/" element={<LandingPage/>}/>
+            <Route path="/callback" element={<Callback/>}/>
+            <Route path="/public" element={<PublicPage/>}/>
 
             <Route path="/" element={<ProtectedRoute element={<Layout/>}/>}>
-                <Route index element={<TodosPage />} />
+                <Route path="/todos" element={<TodosPage/>}/>
                 <Route path="/testing" element={<TestingPage/>}/>
                 <Route path="/forbidden" element={<ForbiddenPage/>}/>
                 <Route path="/notes" element={<NotePage/>}/>
