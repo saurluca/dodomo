@@ -40,20 +40,6 @@ Kando is a simple and intuitive to-do application designed to help you manage yo
     pip install -r requirements.txt
     ```
 
-4. Configure the database in `settings.py`:
-    ```python
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'your_db_name',
-            'USER': 'your_db_user',
-            'PASSWORD': 'your_db_password',
-            'HOST': 'localhost',
-            'PORT': '5432',
-        }
-    }
-    ```
-
 5. Apply migrations:
     ```sh
     python manage.py migrate
