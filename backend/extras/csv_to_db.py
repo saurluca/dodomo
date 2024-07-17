@@ -19,7 +19,7 @@ def load_env_file(filepath):
                 continue
             # Split the line into key and value
             key, value = line.split(":", 1)
-            # Set the environment variable
+            # Set the environment variabl00e
             os.environ[key] = value
 
 

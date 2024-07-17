@@ -23,6 +23,9 @@ export const Header = () => {
                     <Link to="/landing" className="font-medium hover:text-gray-300">
                         Landing
                     </Link>
+                    <Link to="/tools" className="font-medium hover:text-gray-300">
+                        Useful stuff
+                    </Link>
                 </nav>
             </div>
             <div className="flex items-center gap-4">

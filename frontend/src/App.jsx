@@ -7,6 +7,7 @@ import NotePage from "@/pages/NotePage.jsx";
 import ProtectedRoute from "@/components/ProtectedRoute.jsx";
 import LandingPage from "@/pages/LandingPage.jsx";
 import SoundboardPage from "@/pages/SoundboardPage.jsx";
+import ToolsPage from "@/pages/ToolsPage.jsx";
 
 
 const router = createBrowserRouter(
@@ -20,6 +21,7 @@ const router = createBrowserRouter(
                 <Route path="/forbidden" element={<ForbiddenPage/>}/>
                 <Route path="/notes" element={<NotePage/>}/>
                 <Route path="/soundboard" element={<SoundboardPage/>}/>
+                <Route path="/tools" element={<ToolsPage/>}/>
             </Route>
         </>
     )

@@ -8,7 +8,7 @@
 
 ## Long term:
 
-- [ ] Add login
+- [X] Add login
 - [X] Host Frontend
 - [ ] Host Backend
   - [ ] Create docker image
