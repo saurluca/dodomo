@@ -11,7 +11,7 @@ backend/api/__pycache__/
 # jetbrains IDE
 frontend/.idea
 backend/.idea
-.idea
+.idea/
 
 video/
 
@@ -44,6 +44,6 @@ backend/.env
 !.env.example
 
 # Build files
-
+__pycache__/
 
 /sample_auth/
