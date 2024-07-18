@@ -11,11 +11,11 @@ const useLoadTasks = () => {
         setLoading(true);
         setError(null);
 
-        axios.get("http://127.0.0.1:8001/api/TodoTask/all/",
+        axios.get("https://lucasaur.com/api/TodoTask/all/",
             {
                 params: {
                     // TODO what if this sometime not worky if not 10?
-                    limit: 50
+                    limit: 10
                 }
             },)
             .then(response => {

@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const updateTaskCompletion = async (taskId, updatedTask) => {
     try {
-        const response = await axios.post(`http://127.0.0.1:8001/api/TodoTask/${taskId}/update/`,
+        const response = await axios.post(`https://lucasaur.com/api/TodoTask/${taskId}/update/`,
             updatedTask);
         console.log("Task updated:", response.data);
         return response.data;
@@ -14,7 +14,7 @@ export const updateTaskCompletion = async (taskId, updatedTask) => {
 
 export const deleteTask = async (taskId) => {
     try {
-        const response = await axios.delete(`http://127.0.0.1:8001/api/TodoTask/${taskId}/delete/`);
+        const response = await axios.delete(`https://lucasaur.com/api/TodoTask/${taskId}/delete/`);
         console.log("Task deleted:", response.data);
         return response.data;
     } catch (error) {
@@ -29,7 +29,7 @@ export const addTask = async (newTask) => {
         console.log('Data being sent:', data);
         try {
             const response = await axios.post(
-                "http://127.0.0.1:8001/api/TodoTask/add/",
+                "https://lucasaur.com/api/TodoTask/add/",
                 data,
                 {
                     headers: {
