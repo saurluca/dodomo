@@ -4,12 +4,12 @@
 
 - [X] Add login
 - [X] Host Frontend
-- [ ] Host Backend
+- [x] Host Backend
   - [X] Create docker image
   - [X] Run it on server
-  - [ ] Connect to frontend
-    - [ ] push to server
-    - [ ] Check if working
+  - [X] Connect to frontend
+    - [X] push to server
+    - [x] Check if working
 
 ## Multiple user
 

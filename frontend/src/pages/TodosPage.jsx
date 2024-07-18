@@ -86,7 +86,7 @@ const TodosPage = () => {
                 <div className="flex-1 flex justify-center">
                     <InputTask addTask={handleAddTask}/>
                 </div>
-                <div className="absolute right-0">
+                <div className="absolute right-0 hidden lg:block">
                     <Button onClick={() => setWorkingMode(!workingMode)} className="bg-blue-500 text-white hover:bg-blue-700">
                         WorkingMode {workingMode ? 'On' : 'Off'}
                     </Button>
