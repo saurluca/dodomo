@@ -24,8 +24,7 @@
 
 ## UX:
 
-- [ ]  mobile support
-- [ ] sidebar
+- [x] improve mobile support
 - [ ] move tasks up and down
 
 ## Ideas:

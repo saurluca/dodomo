@@ -83,17 +83,17 @@ const TodosPage = () => {
     return (
         <div className="w-full mx-auto">
             <div className="flex justify-center items-center mb-5">
-                <div className="flex-1 flex justify-center">
+                <span className="flex-1 flex justify-center">
                     <InputTask addTask={handleAddTask}/>
-                </div>
-                <div className="absolute right-0 hidden lg:block">
+                </span>
+                <span className="absolute right-0 hidden lg:block">
                     <Button onClick={() => setWorkingMode(!workingMode)} className="bg-blue-500 text-white hover:bg-blue-700">
                         WorkingMode {workingMode ? 'On' : 'Off'}
                     </Button>
                     <Button onClick={() => setSoundOn(!soundOn)} className="bg-blue-500 text-white hover:bg-blue-700 mx-3">
                         Sound {soundOn ? 'On' : 'Off'}
                     </Button>
-                </div>
+                </span>
             </div>
             <audio ref={audioRef}/>
             <ScrollArea className="max-w-[700px] w-full h-[570px] mx-auto rounded-md border bg-gray-100 flex justify-center p-4 shadow">
