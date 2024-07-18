@@ -85,9 +85,10 @@ def add(request, model_name):
 def ApiOverview(request):
     api_urls = {
         "all_items": "/",
-        "Add": "/add",
-        "Update": "/update/pk",
-        "Delete": "/item/pk/delete",
+        "View": "<model_name>/view",
+        "Add": "<model_name>/add",
+        "Update": "<model_name>/pk/update",
+        "Delete": "<model_name>/pk/delete",
     }
 
     return Response(api_urls)
