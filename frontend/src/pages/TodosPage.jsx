@@ -36,7 +36,6 @@ const TodosPage = () => {
         setTasksToShow(show)
     }, [checkedTasks, uncheckedTasks]);
 
-    if (error) return <div>Error loading tasks: {error.message}</div>;
 
     const handleUpdateTaskCompletion = async (taskId, updatedTask) => {
         try {
@@ -68,7 +67,7 @@ const TodosPage = () => {
 
     const handleAddTask = async (newTask) => {
         try {
-            const fullTask = {title: newTask, user: user.name}
+            const fullTask = {title: newTask, user: user.email}
             await addTask(fullTask);
             await reloadTasks();
 
@@ -99,6 +98,7 @@ const TodosPage = () => {
                 </span>
             </div>
             <audio ref={audioRef}/>
+            {error ? <div>Error loading tasks: {error.message}</div> :
             <ScrollArea className="max-w-[700px] w-full h-[570px] mx-auto rounded-md border bg-gray-100 flex justify-center p-4 shadow">
                 {
                     (workingMode ? (tasksToShow.length > 0 ? tasksToShow : false) : tasks).map(task =>
@@ -117,6 +117,7 @@ const TodosPage = () => {
                     )
                 }
             </ScrollArea>
+            }
         </div>
     );
 };
