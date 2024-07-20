@@ -31,7 +31,7 @@ const useLoadTasks = () => {
                 setError(error)
                 setLoading(false)
             });
-    }, []);
+    }, [user.name]);
 
     useEffect(() => {
         loadTasks();
