@@ -48,11 +48,16 @@ def view(request, model_name):
         request.query_params.get("limit", 10)
     )  # Default limit to 5 if not provided
 
+    user = request.query_params.get("user", None)
+
     # Fetch items with a limit
     query_params = request.query_params.dict()
     query_params.pop("limit", None)  # Remove 'limit' from query params if exists
 
-    items = ModelClass.objects.filter(**query_params)[:limit]
+    if user:
+        items = ModelClass.objects.filter(user=user, **query_params)[:limit]
+    else:
+        items = ModelClass.objects.filter(**query_params)[:limit]
 
     if items:
         serializer = SerializerClass(items, many=True)
