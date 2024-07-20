@@ -13,3 +13,25 @@ services:
       - ./volumes/postgresql:/var/lib/postgresql/data
     env_file:
       - .env
+
+  web:
+    build:
+      context: ./backend
+    command: gunicorn backend.wsgi:application --bind 0.0.0.0:8001
+    volumes:
+      - ./backend:/app
+    ports:
+      - "8001:8001"
+    depends_on:
+      - db
+    environment:
+      - DEFAULT_DB_NAME=your_db_name
+      - DEFAULT_DB_USER=your_db_user
+      - DEFAULT_DB_PASSWORD=your_db_password
+      - DEFAULT_DB_HOST=db
+      - DEFAULT_DB_PORT=5432
+    env_file:
+      - /backend/.env
+
+volumes:
+  postgres_data:

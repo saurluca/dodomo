@@ -28,6 +28,7 @@
 - [ ] Add axios instance (setting url globally)
 - [ ] Error handling for backend not avialbe
 - [X] Fix lading page to todos if already logged in small error screen
+- [ ] Merge both .env
 
 ## UX:
 

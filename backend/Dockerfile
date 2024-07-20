@@ -19,4 +19,4 @@ COPY .env /app/
 
 EXPOSE 8001
 
-CMD ["sh", "-c", "source /app/.env && gunicorn backend.wsgi:application --bind 0.0.0.0:8001"]
+#CMD ["sh", "-c", "source /app/.env && gunicorn backend.wsgi:application --bind 0.0.0.0:8001"]
