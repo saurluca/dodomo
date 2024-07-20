@@ -53,6 +53,7 @@ def view(request, model_name):
     # Fetch items with a limit
     query_params = request.query_params.dict()
     query_params.pop("limit", None)  # Remove 'limit' from query params if exists
+    query_params.pop("user", None)
 
     if user:
         items = ModelClass.objects.filter(user=user, **query_params)[:limit]
