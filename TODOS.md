@@ -20,7 +20,7 @@
   - [X] provide user data from frontend
   - [x] change to psql
   - [X} setup db in docker on server
-  - [ ] connect backend to db of psql
+  - [X] connect backend to db of psql
   - [ ] host backend
 
 ## Small improvements:
