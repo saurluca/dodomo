@@ -14,7 +14,7 @@ client = OpenAI()
 
 
 @api_view(["GET"])
-def get_meme():
+def get_meme(request):
     try:
         response = client.images.generate(
             model="dall-e-3",
