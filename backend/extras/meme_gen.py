@@ -13,4 +13,4 @@ response = client.images.generate(
     style="natural",
 )
 
-print(response)
+print(response.data[0].url)
