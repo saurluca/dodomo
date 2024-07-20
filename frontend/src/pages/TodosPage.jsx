@@ -6,6 +6,7 @@ import {Separator} from "@radix-ui/react-dropdown-menu";
 import {addTask, deleteTask, updateTaskCompletion} from "@/services/taskApi.jsx";
 import {useEffect, useRef, useState} from "react";
 import {Button} from "@/components/ui/button.jsx";
+import {useAuth0} from "@auth0/auth0-react";
 
 
 const TodosPage = () => {
@@ -13,6 +14,7 @@ const TodosPage = () => {
     const audioRef = useRef(null);
     const [soundOn, setSoundOn] = useState(false);
     const [workingMode, setWorkingMode] = useState(false);
+    const {user} = useAuth0();
 
     const [checkedTasks, setCheckedTasks] = useState([]);
     const [uncheckedTasks, setUncheckedTasks] = useState([]);
@@ -66,7 +68,8 @@ const TodosPage = () => {
 
     const handleAddTask = async (newTask) => {
         try {
-            await addTask(newTask);
+            const fullTask = {title: newTask, user: user.name}
+            await addTask(fullTask);
             await reloadTasks();
 
             if (audioRef.current && soundOn) {

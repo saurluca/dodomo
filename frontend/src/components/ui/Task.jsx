@@ -12,6 +12,8 @@ const Task = ({task, onDelete, onUpdate}) => {
         onUpdate(task.id, updatedTask);
     }
 
+    console.log(task)
+
     return (
         <div className="rounded-lg border bg-card text-card-foreground shadow-md max-w-[700px] w-full">
             <div className="p-3 flex items-center justify-between">
@@ -19,11 +21,13 @@ const Task = ({task, onDelete, onUpdate}) => {
                     <Checkbox checked={task.completed} onCheckedChange={handleCheckboxChange} className="h-5 w-5"/>
                     <label className={`text-lg font-medium task ${task.completed ? 'line-through' : ''}`}>
                         {task.title}
+                        {task.user}
                     </label>
                 </label>
                 <div className="flex items-center ml-16 space-x-4">
                     <div className="text-sm text-gray-500 ">
                         {task.due_date}
+                        {/*{task.user}*/}
                     </div>
                     <Button variant="outline" onClick={handleClick}
                             className="border border-gray-500 bg-red-400 text-black hover:bg-red-600 hover:text-white transition duration-300 ease-in-out"

@@ -1,4 +1,5 @@
 import axios from "axios";
+import {useAuth0} from "@auth0/auth0-react";
 
 export const updateTaskCompletion = async (taskId, updatedTask) => {
     try {
@@ -24,8 +25,9 @@ export const deleteTask = async (taskId) => {
 };
 
 export const addTask = async (newTask) => {
-    if (newTask.trim()) {
-        const data = JSON.stringify({title: newTask});
+    // const {user} = useAuth0();
+    if (newTask) {
+        const data = JSON.stringify(newTask);
         console.log('Data being sent:', data);
         try {
             const response = await axios.post(
