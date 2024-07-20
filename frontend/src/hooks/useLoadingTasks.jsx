@@ -8,7 +8,6 @@ const useLoadTasks = () => {
     const [error, setError] = useState(null);
     const {user} = useAuth0();
 
-
     const loadTasks = useCallback(async () => {
         setLoading(true);
         setError(null);
@@ -19,7 +18,7 @@ const useLoadTasks = () => {
                 params: {
                     // TODO what if this sometime not worky if not 10?
                     limit: 10,
-                    user: user.name
+                    user: user.email
                 }
             },)
             .then(response => {
@@ -31,7 +30,7 @@ const useLoadTasks = () => {
                 setError(error)
                 setLoading(false)
             });
-    }, [user.name]);
+    }, [user.email]);
 
     useEffect(() => {
         loadTasks();
