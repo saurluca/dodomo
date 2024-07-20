@@ -8,6 +8,7 @@ class TodoTask(models.Model):
     description = models.CharField(max_length=255, default="description")
     due_date = models.DateField(default=date.today)
     completed = models.BooleanField(default=False)
+    user = models.CharField(max_length=255, default="admin")
 
     def __str__(self):
         return self.title
