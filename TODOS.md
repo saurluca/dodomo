@@ -15,15 +15,15 @@
 
 - [X] Authentication
 - [X] Login
-- [ ] Filter data for every user
+- [x] Filter data for every user
   - [X] add user data to model
   - [X] provide user data from frontend
   - [x] change to psql
   - [X} setup db in docker on server
   - [X] connect backend to db of psql
   - [X] host backend
-  - [ ] filter for user in frontend
-  - [ ] fix bugg where if no task no load
+  - [X] filter for user in frontend
+  - [x] fix bugg where if no task no load
 
 ## Small improvements:
 

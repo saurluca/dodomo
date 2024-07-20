@@ -1,9 +1,32 @@
+import openai
 from django.shortcuts import get_object_or_404
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
 from django.apps import apps
 from importlib import import_module
+from openai import OpenAI
+from dotenv import load_dotenv
+
+load_dotenv()
+
+client = OpenAI()
+
+
+@api_view(["GET"])
+def get_meme():
+    try:
+        response = client.images.generate(
+            model="dall-e-3",
+            prompt="A funny cat meme about clothes",
+            n=1,
+            size="1024x1024",
+            style="natural",
+        )
+        return Response(response)
+    except openai.OpenAIError as e:
+        print(f"Error {e}")
+        return Response(status=e.http_status)
 
 
 @api_view(["DELETE"])
