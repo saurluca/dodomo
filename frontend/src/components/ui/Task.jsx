@@ -45,7 +45,8 @@ Task.propTypes = {
         id: PropTypes.number.isRequired,
         title: PropTypes.string.isRequired,
         completed: PropTypes.bool.isRequired,
-        due_date: PropTypes.string
+        due_date: PropTypes.string,
+        user: PropTypes.string,
     }).isRequired,
     onDelete: PropTypes.func.isRequired,
     onUpdate: PropTypes.func.isRequired
