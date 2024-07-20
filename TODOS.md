@@ -16,11 +16,18 @@
 - [X] Authentication
 - [X] Login
 - [ ] Filter data for every user
+  - [X] add user data to model
+  - [X] provide user data from frontend
+  - [x] change to psql
+  - [X} setup db in docker on server
+  - [ ] connect backend to db of psql
+  - [ ] host backend
 
 ## Small improvements:
 
 - [ ] Add axios instance (setting url globally)
 - [ ] Error handling for backend not avialbe
+- [X] Fix lading page to todos if already logged in small error screen
 
 ## UX:
 

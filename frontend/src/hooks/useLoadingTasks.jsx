@@ -6,12 +6,12 @@ const useLoadTasks = () => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
-    // useEffect(() => {
     const loadTasks = useCallback(async () => {
         setLoading(true);
         setError(null);
 
         axios.get("https://lucasaur.com/api/TodoTask/all/",
+
             {
                 params: {
                     // TODO what if this sometime not worky if not 10?

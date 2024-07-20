@@ -36,7 +36,7 @@ const TodosPage = () => {
         setTasksToShow(show)
     }, [checkedTasks, uncheckedTasks]);
 
-    if (error) return <p>Error loading tasks: {error.message}</p>;
+    if (error) return <div>Error loading tasks: {error.message}</div>;
 
     const handleUpdateTaskCompletion = async (taskId, updatedTask) => {
         try {
