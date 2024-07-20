@@ -31,7 +31,7 @@ services:
       - DEFAULT_DB_HOST=db
       - DEFAULT_DB_PORT=5432
     env_file:
-      - /backend/.env
+      - ./backend/.env
 
 volumes:
   postgres_data:
