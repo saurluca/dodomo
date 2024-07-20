@@ -21,13 +21,11 @@ const Task = ({task, onDelete, onUpdate}) => {
                     <Checkbox checked={task.completed} onCheckedChange={handleCheckboxChange} className="h-5 w-5"/>
                     <label className={`text-lg font-medium task ${task.completed ? 'line-through' : ''}`}>
                         {task.title}
-                        {task.user}
                     </label>
                 </label>
                 <div className="flex items-center ml-16 space-x-4">
                     <div className="text-sm text-gray-500 ">
-                        {task.due_date}
-                        {/*{task.user}*/}
+                        {task.user} {task.due_date}
                     </div>
                     <Button variant="outline" onClick={handleClick}
                             className="border border-gray-500 bg-red-400 text-black hover:bg-red-600 hover:text-white transition duration-300 ease-in-out"
