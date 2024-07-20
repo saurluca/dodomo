@@ -1,10 +1,13 @@
 import {useCallback, useEffect, useState} from 'react';
 import axios from 'axios';
+import {useAuth0} from "@auth0/auth0-react";
 
 const useLoadTasks = () => {
     const [tasks, setTasks] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const {user} = useAuth0();
+
 
     const loadTasks = useCallback(async () => {
         setLoading(true);
@@ -15,7 +18,8 @@ const useLoadTasks = () => {
             {
                 params: {
                     // TODO what if this sometime not worky if not 10?
-                    limit: 10
+                    limit: 10,
+                    user: user.name
                 }
             },)
             .then(response => {
