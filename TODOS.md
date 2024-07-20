@@ -21,7 +21,9 @@
   - [x] change to psql
   - [X} setup db in docker on server
   - [X] connect backend to db of psql
-  - [ ] host backend
+  - [X] host backend
+  - [ ] filter for user in frontend
+  - [ ] fix bugg where if no task no load
 
 ## Small improvements:
 
@@ -29,6 +31,9 @@
 - [ ] Error handling for backend not avialbe
 - [X] Fix lading page to todos if already logged in small error screen
 - [ ] Merge both .env
+- [ ] Script to push/pull backend as well
+- [ ] I can just curl the api etc, maybe disable or something:w
+-
 
 ## UX:
 
