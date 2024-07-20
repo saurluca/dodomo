@@ -24,12 +24,6 @@ services:
       - "8001:8001"
     depends_on:
       - db
-    #    environment:
-    #      - DEFAULT_DB_NAME=your_db_name
-    #      - DEFAULT_DB_USER=your_db_user
-    #      - DEFAULT_DB_PASSWORD=your_db_password
-    #      - DEFAULT_DB_HOST=db
-    #      - DEFAULT_DB_PORT=5432
     env_file:
       - ./backend/.env
 
