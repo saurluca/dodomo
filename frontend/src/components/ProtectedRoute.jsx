@@ -11,7 +11,7 @@ const ProtectedRoute = ({element}) => {
 
     if (isLoading) {
         // return <div>Loading...</div>;
-        return <LoadingSpinner/>
+        return <div className="flex justify-center items-center h-screen"><LoadingSpinner/></div>
     }
 
     return isAuthenticated ? element : <Navigate to="/"/>;
