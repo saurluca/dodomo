@@ -16,9 +16,16 @@ client = OpenAI()
 @api_view(["GET"])
 def get_meme(request):
     try:
+        # get prompt other vise defaults to cats
+        prompt = request.query_params.get("prompt", "cats")
+        prompt = "A funny meme about" + prompt
+    except TypeError:
+        prompt = "A funny meme about cubes"
+
+    try:
         response = client.images.generate(
             model="dall-e-3",
-            prompt="A funny cat meme about clothes",
+            prompt=prompt,
             n=1,
             size="1024x1024",
             style="natural",
