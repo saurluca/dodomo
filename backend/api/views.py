@@ -32,7 +32,6 @@ def get_meme(request):
         )
         return Response(response)
     except openai.OpenAIError as e:
-        print(f"Error {e}")
         return Response(status=e.http_status)
 
 
