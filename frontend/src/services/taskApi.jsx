@@ -24,7 +24,6 @@ export const deleteTask = async (taskId) => {
 };
 
 export const addTask = async (newTask) => {
-    // const {user} = useAuth0();
     if (newTask) {
         const data = JSON.stringify(newTask);
         console.log('Data being sent:', data);
