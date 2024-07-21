@@ -18,7 +18,7 @@ def get_meme(request):
     try:
         # get prompt other vise defaults to cats
         prompt = request.query_params.get("prompt", "cats")
-        prompt = "A funny meme about" + prompt
+        prompt = "A funny meme with a caption about" + prompt
     except TypeError:
         prompt = "A funny meme about cubes"
 
