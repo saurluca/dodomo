@@ -1,11 +1,10 @@
 import axios from "axios";
 
-export const getMeme = async (data) => {
+export const getMeme = async (prompt) => {
     try {
-        const response = await axios.get(
-            "https://lucasaur.com/api/meme",
-            data,
+        const response = await axios.get("https://lucasaur.com/api/meme",
             {
+                params: {prompt: prompt.prompt},
                 headers: {
                     'Content-Type': 'application/json'
                 }
