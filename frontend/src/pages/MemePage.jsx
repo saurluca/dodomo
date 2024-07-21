@@ -29,9 +29,14 @@ const MemePage = () => {
         setLoading(true)
         console.log("loading Meme...")
         console.log("Prompt:", prompt)
-        const response = getMeme(prompt)
-        setImageSrc(await response)
-        setLoading(false)
+        const jsonPrompt = {prompt: prompt}
+        try {
+            const response = getMeme(jsonPrompt)
+            setImageSrc(await response)
+        } catch (error) {
+            console.error("Error fetching meme:", error);
+        }
+        setLoading(false);
     }
 
     return (
