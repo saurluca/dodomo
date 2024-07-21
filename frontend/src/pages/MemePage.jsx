@@ -26,7 +26,7 @@ const MemePage = () => {
         <div className="w-full h-full">
             <div className="flex justify-center">
                 {/* Button to trigger meme loading */}
-                <Button className="text-6xl underline" onClick={handleClick}>SHOW MEME</Button>
+                <Button className="text-6xl  hover:bg-green-700 w-100 h-20" onClick={handleClick}>SHOW MEME</Button>
             </div>
             <div className="flex justify-content">
                 {/* Conditional rendering: show loading spinner or image based on loading state */}
