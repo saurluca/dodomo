@@ -11,6 +11,7 @@ import ToolsPage from "@/pages/ToolsPage.jsx";
 import Callback from "@/components/Callback.jsx";
 import PublicPage from "@/pages/PublicPage.jsx";
 import MemePage from "@/pages/MemePage.jsx";
+import ImagePage from "@/pages/ImagePage.jsx";
 
 
 const router = createBrowserRouter(
@@ -28,6 +29,7 @@ const router = createBrowserRouter(
                 <Route path="/soundboard" element={<SoundboardPage/>}/>
                 <Route path="/tools" element={<ToolsPage/>}/>
                 <Route path="/memes" element={<MemePage/>}/>
+                <Route path="/images" element={<ImagePage/>}/>
             </Route>
         </>
     )

@@ -15,7 +15,7 @@ export const Header = () => {
                     <Link to="/soundboard" className="font-medium hover:text-gray-300">
                         Soundboard
                     </Link>
-                    <Link to="/notes" className="font-medium hover:text-gray-300">
+                    <Link to="/notes" className="font-medium hover:text-gray-300 hidden md:block">
                         Notes
                     </Link><Link to="/testing" className="font-medium hover:text-gray-300 hidden md:block">
                         Testing
@@ -28,6 +28,9 @@ export const Header = () => {
                     </Link>
                     <Link to="/memes" className="font-medium hover:text-gray-300">
                         Memes
+                    </Link>
+                    <Link to="/images" className="font-medium hover:text-gray-300 hidden md:block">
+                        Images
                     </Link>
                 </nav>
             </div>
