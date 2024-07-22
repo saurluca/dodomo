@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const getMeme = async (prompt) => {
     try {
-        const response = await axios.get("https://lucasaur.com/api/meme",
+        const response = await axios.get("https://dodomo.org/api/meme",
             {
                 params: {prompt: prompt.prompt},
                 headers: {

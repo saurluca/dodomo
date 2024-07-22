@@ -18,6 +18,7 @@ const MemePage = () => {
         try {
             const imageUrl = fetchImage(prompt);
             setImageSrc(await imageUrl)
+            console.log("Image URL:", imageUrl)
         } catch (error) {
             console.error("Error fetching meme:", error);
         }

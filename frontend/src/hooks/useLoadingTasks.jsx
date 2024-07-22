@@ -12,7 +12,7 @@ const useLoadTasks = () => {
         setLoading(true);
         setError(null);
 
-        axios.get("https://lucasaur.com/api/TodoTask/all/",
+        axios.get("https://dodomo.org/api/TodoTask/all/",
 
             {
                 params: {

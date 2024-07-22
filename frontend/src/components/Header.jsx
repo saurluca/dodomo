@@ -9,7 +9,7 @@ export const Header = () => {
             <div className="flex items-center gap-4">
                 <Link to="/todos" className="flex items-center gap-2">
                     <PackageIcon className="w-6 h-6"/>
-                    <span className="text-lg font-semibold">Kando</span>
+                    <span className="text-lg font-semibold">Dodomo</span>
                 </Link>
                 <nav className="flex items-center gap-6">
                     <Link to="/soundboard" className="font-medium hover:text-gray-300">
