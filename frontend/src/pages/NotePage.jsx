@@ -1,5 +1,4 @@
 import {InputTask} from "@/components/ui/InputTask.jsx";
-import {useState} from "react";
 import LoadingSpinner from "@/components/ui/loadingSpinner.jsx";
 
 const NotePage = () => {

@@ -1,6 +1,7 @@
-# Kando To-Do Application
+# Dodomo To-Do Application
 
-Kando is a simple and intuitive to-do application designed to help you manage your tasks efficiently. It features a robust backend built with Django, a dynamic frontend powered by Nuxt.js, and a PostgreSQL database for reliable data storage. Kando is designed to be easily hosted on your own server.
+Dodomo is a simple and intuitive to-do application designed to help you manage your tasks efficiently. It features a robust backend built with Django,
+a dynamic frontend powered by Nuxt.js, and a PostgreSQL database for reliable data storage. Dodomo is designed to be easily hosted on your own server.
 
 
 ## Technologies Used
@@ -25,8 +26,8 @@ Kando is a simple and intuitive to-do application designed to help you manage yo
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/saurluca/kando.git
-    cd kando/backend
+    git clone https://github.com/saurluca/dodomo.git
+    cd dodomo/backend
     ```
 
 2. Create a virtual environment and activate it:
@@ -86,8 +87,7 @@ We welcome contributions from the community! To contribute, please follow these 
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-
-Thank you for using Kando! We hope it helps you stay organized and productive.
+Thank you for using Dodomo! We hope it helps you stay organized and productive.
 
 Build the React app:
 
