@@ -25,7 +25,7 @@ const Task = ({task, onDelete, onUpdate}) => {
                 </label>
                 <div className="flex items-center ml-16 space-x-4">
                     <div className="text-sm text-gray-500 ">
-                        {task.user} {task.due_date}
+                        {task.due_date}
                     </div>
                     <Button variant="outline" onClick={handleClick}
                             className="border border-gray-500 bg-red-400 text-black hover:bg-red-600 hover:text-white transition duration-300 ease-in-out"
