@@ -5,40 +5,36 @@ import LogoutButton from "@/components/functional/LogoutButton.jsx";
 
 export const Header = () => {
     return (
-        <header className="bg-gray-900 text-white py-4 px-6 flex items-center justify-between">
-            <div className="flex items-center gap-4">
+        <header className="bg-gray-900 text-white text-xl py-5 px-6 flex justify-between items-center">
+            <nav className="flex items-center gap-6">
                 <Link to="/todos" className="flex items-center gap-2">
                     <PackageIcon className="w-6 h-6"/>
-                    <span className="text-lg font-semibold">Dodomo</span>
+                    <span className="font-semibold">Dodomo</span>
                 </Link>
-                <nav className="flex items-center gap-6">
-                    <Link to="/soundboard" className="font-medium hover:text-gray-300">
-                        Soundboard
-                    </Link>
-                    <Link to="/notes" className="font-medium hover:text-gray-300 hidden md:block">
-                        Notes
-                    </Link><Link to="/testing" className="font-medium hover:text-gray-300 hidden md:block">
-                        Testing
-                    </Link>
-                    <Link to="/" className="font-medium hover:text-gray-300 hidden md:block">
-                        Landing
-                    </Link>
-                    <Link to="/tools" className="font-medium hover:text-gray-300">
-                        Useful stuff
-                    </Link>
-                    <Link to="/memes" className="font-medium hover:text-gray-300">
-                        Memes
-                    </Link>
-                    <Link to="/images" className="font-medium hover:text-gray-300 hidden md:block">
-                        Images
-                    </Link>
-                </nav>
-            </div>
-            <div className="flex items-center gap-4">
+            </nav>
+            <nav className="flex items-center gap-6 justify-center flex-grow">
+                <Link to="/todos" className="font-medium hover:text-gray-300 hidden md:block">
+                    Todos
+                </Link>
+                <Link to="/tools" className="font-medium hover:text-gray-300">
+                    Useful stuff
+                </Link>
+                <Link to="/memes" className="font-medium hover:text-gray-300">
+                    Memes
+                </Link>
+                <Link to="/images" className="font-medium hover:text-gray-300 hidden md:block">
+                    Images
+                </Link>
+                <Link to="/soundboard" className="font-medium hover:text-gray-300">
+                    Soundboard
+                </Link>
+                <Link to="/testing" className="font-medium hover:text-gray-300 hidden md:block">
+                    Testing
+                </Link>
+            </nav>
+            <div>
                 <LogoutButton/>
-                <Link to="/forbidden" className="text-muted text-2xl text-red-600 hidden md:block">Nothingness</Link>
             </div>
-
         </header>
     )
 };
