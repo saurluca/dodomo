@@ -31,11 +31,14 @@ const TodosPage = () => {
     }, [tasks]);
 
     useEffect(() => {
-        //
-        const show = [...checkedTasks.slice(0, 4 + Math.max(3 - uncheckedTasks.length, 0)).reverse(), ...uncheckedTasks.slice(0, 3)];
-        setTasksToShow(show)
-    }, [checkedTasks, uncheckedTasks]);
-
+        if (workingMode) {
+            const show = [...checkedTasks.slice(0, 4 + Math.max(3 - uncheckedTasks.length, 0)).reverse(), ...uncheckedTasks.slice(0, 3)]
+            setTasksToShow(show)
+        } else {
+            const show = [...tasks].sort((a, b) => b.id - a.id);
+            setTasksToShow(show)
+        }
+    }, [checkedTasks, tasks, uncheckedTasks, workingMode]);
 
     const handleUpdateTaskCompletion = async (taskId, updatedTask) => {
         try {
