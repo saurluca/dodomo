@@ -29,17 +29,12 @@ const ToolsPage = () => {
                         I like bread jo
                     </a>
                 </li>
-
-
-                <li>
-
-                </li>
             </ul>
             <br/>
             <h1 className="text-4xl font-bold">My stuff</h1>
             <br/>
-            <a href="https://github.com/saurluca/kando" target="_blank" className="list-inline text-2xl text-blue-600 underline">
-                Github repo kando
+            <a href="https://github.com/saurluca/dodomo" target="_blank" className="list-inline text-2xl text-blue-600 underline">
+                Github repo Dodomo
             </a>
         </div>
     )

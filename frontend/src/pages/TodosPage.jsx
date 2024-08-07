@@ -15,39 +15,36 @@ const TodosPage = () => {
     const [soundOn, setSoundOn] = useState(false);
     const [workingMode, setWorkingMode] = useState(false);
     const {user} = useAuth0();
-
-    const [checkedTasks, setCheckedTasks] = useState([]);
-    const [uncheckedTasks, setUncheckedTasks] = useState([]);
     const [tasksToShow, setTasksToShow] = useState([]);
 
     useEffect(() => {
-        const checked = tasks.filter(task => task.completed).sort((a, b) => b.id - a.id);
-        setCheckedTasks(checked);
-    }, [tasks]);
+        const sortedTasks = [...tasks].sort((a, b) => b.id - a.id);
 
-    useEffect(() => {
-        const unchecked = tasks.filter(task => !task.completed);
-        setUncheckedTasks(unchecked);
-    }, [tasks]);
-
-    useEffect(() => {
         if (workingMode) {
-            const show = [...checkedTasks.slice(0, 4 + Math.max(3 - uncheckedTasks.length, 0)).reverse(), ...uncheckedTasks.slice(0, 3)]
-            setTasksToShow(show)
+            const checked = sortedTasks.filter(task => task.completed);
+            const unchecked = sortedTasks.filter(task => !task.completed);
+            const show = [
+                ...checked.slice(0, 4 + Math.max(3 - unchecked.length, 0)).reverse(),
+                ...unchecked.slice(0, 3)
+            ];
+            setTasksToShow(show);
         } else {
-            const show = [...tasks].sort((a, b) => b.id - a.id);
-            setTasksToShow(show)
+            setTasksToShow(sortedTasks);
         }
-    }, [checkedTasks, tasks, uncheckedTasks, workingMode]);
+    }, [tasks, workingMode]);
+
+    const playSound = (sound) => {
+        if (audioRef.current && soundOn) {
+            audioRef.current.src = `/sounds/${sound}.mp3`;
+            audioRef.current.play();
+        }
+    };
 
     const handleUpdateTaskCompletion = async (taskId, updatedTask) => {
         try {
             await updateTaskCompletion(taskId, updatedTask);
             await reloadTasks();
-            if (audioRef.current && soundOn) {
-                audioRef.current.src = `/sounds/point.mp3`;
-                audioRef.current.play();
-            }
+            playSound('point');
         } catch (error) {
             console.error("Error updating task:", error);
         }
@@ -57,12 +54,7 @@ const TodosPage = () => {
         try {
             await deleteTask(taskId);
             await reloadTasks();
-
-            if (audioRef.current && soundOn) {
-                audioRef.current.src = `/sounds/hit.mp3`;
-                audioRef.current.play();
-            }
-
+            playSound('hit');
         } catch (error) {
             console.error("Error deleting task:", error);
         }
@@ -70,20 +62,16 @@ const TodosPage = () => {
 
     const handleAddTask = async (newTask) => {
         try {
-            const fullTask = {title: newTask, user: user.email}
+            const fullTask = {title: newTask, user: user.email};
             await addTask(fullTask);
             await reloadTasks();
-
-            if (audioRef.current && soundOn) {
-                audioRef.current.src = `/sounds/hmm.mp3`;
-                audioRef.current.play();
-            }
-
+            playSound('hmm');
         } catch (error) {
             console.error("Error adding task:", error);
         }
     };
 
+    console.log("error loading task", error)
 
     return (
         <div className="w-full mx-auto">
@@ -101,28 +89,25 @@ const TodosPage = () => {
                 </span>
             </div>
             <audio ref={audioRef}/>
-            {error ? <div>Error loading tasks: {error.message}</div> :
             <ScrollArea className="max-w-[700px] w-full h-[570px] mx-auto rounded-md border bg-gray-100 flex justify-center p-4 shadow">
-                {
-                    (workingMode ? (tasksToShow.length > 0 ? tasksToShow : false) : tasks).map(task =>
-                        task ? (
-                            <div key={task.id}>
-                                <Task
-                                    task={task}
-                                    onDelete={handleDeleteTask}
-                                    onUpdate={handleUpdateTaskCompletion}
-                                />
-                                <Separator className="my-3"/>
-                            </div>
-                        ) : (
-                            <div key="no-tasks">No tasks to show</div>
-                        )
+                {tasksToShow.length > 0 ? (
+                    tasksToShow.map(task =>
+                        <div key={task.id}>
+                            <Task
+                                task={task}
+                                onDelete={handleDeleteTask}
+                                onUpdate={handleUpdateTaskCompletion}
+                            />
+                            <Separator className="my-3"/>
+                        </div>
                     )
-                }
+                ) : (
+                    <div key="no-tasks">No tasks to show</div>
+                )}
             </ScrollArea>
-            }
         </div>
     );
 };
 
 export default TodosPage;
+// (workingMode ? (tasksToShow.length > 0 ? tasksToShow : false) : tasksToShow).map(task =>
